@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"zhizhizzzzzzz.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content=".award-container {     font-family: &quot;Segoe UI&quot;, Arial, sans-serif;     line-height: 1.6;     max-width: 960px;     margin: 0 auto;     padding: 16px;     font-size: 0.95rem;   }    .award-section">
+  <meta name="description" content=".award-container {     font-family: &quot;Segoe UI&quot;, Arial, sans-serif;     line-height: 1.6;     max-width: 1080px;     margin: 0 auto;     padding: 16px;     font-size: 0.9rem; &#x2F;* 稍微小基础字体 *&#x2F;     bac">
 <meta property="og:type" content="website">
 <meta property="og:title" content="协会获奖荣誉">
 <meta property="og:url" content="https://zhizhizzzzzzz.github.io/competitions/index.html">
 <meta property="og:site_name" content="RC机器人协会">
-<meta property="og:description" content=".award-container {     font-family: &quot;Segoe UI&quot;, Arial, sans-serif;     line-height: 1.6;     max-width: 960px;     margin: 0 auto;     padding: 16px;     font-size: 0.95rem;   }    .award-section">
+<meta property="og:description" content=".award-container {     font-family: &quot;Segoe UI&quot;, Arial, sans-serif;     line-height: 1.6;     max-width: 1080px;     margin: 0 auto;     padding: 16px;     font-size: 0.9rem; &#x2F;* 稍微小基础字体 *&#x2F;     bac">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-08-11T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-08-30T00:54:53.398Z">
+<meta property="article:modified_time" content="2025-08-31T07:04:36.488Z">
 <meta property="article:author" content="zhizhizzzzzzz@gmail.com">
 <meta property="article:tag" content="荣誉">
 <meta property="article:tag" content="赛事">
@@ -189,31 +189,66 @@
   .award-container {
     font-family: "Segoe UI", Arial, sans-serif;
     line-height: 1.6;
-    max-width: 960px;
+    max-width: 1080px;
     margin: 0 auto;
     padding: 16px;
-    font-size: 0.95rem;
+    font-size: 0.9rem; /* 稍微小基础字体 */
+    background-color: #f9fafb;
   }
 
   .award-section {
-    margin-bottom: 40px;
+    margin-bottom: 30px; /* 减小区块间距 */
+    background: white;
+    border-radius: 12px; /* 减小圆角 */
+    padding: 20px; /* 减小内边距 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .award-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px; /* 减小装饰饰条高度 */
+    background: linear-gradient(90deg, #4285f4, #34a853, #fbbc05, #ea4335);
+    opacity: 0.8;
   }
 
   .award-section h2 {
-    border-bottom: 2px solid #e0e0e0;
-    padding-bottom: 8px;
-    margin-bottom: 22px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
     color: #1a237e;
-    font-size: 1.5rem;
+    font-size: 1.4rem; /* 调整标题大小 */
     font-weight: 700;
     text-align: left;
+    position: relative;
+    padding-left: 10px;
   }
 
-  /* 奖项列表改为两列 */
+  .award-section h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 3px; /* 减小指示线宽度 */
+    border-radius: 2px;
+  }
+
+  /* 不同类别标题左侧装饰线颜色 */
+  .award-section:nth-of-type(1) h2::before { background-color: #FF6B6B; }
+  .award-section:nth-of-type(3) h2::before { background-color: #2196F3; }
+  .award-section:nth-of-type(5) h2::before { background-color: #4CAF50; }
+
+  /* 奖项列表 - 默认两列，移动端自动调整为一列 */
   .award-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 14px 18px; /* 行间距14px，列间距18px */
+    gap: 12px 15px; /* 减小间距 */
   }
 
   .award-item {
@@ -221,82 +256,136 @@
     justify-content: space-between;
     align-items: center;
     gap: 10px;
-    padding: 12px 14px;
+    padding: 12px 15px; /* 调整内边距 */
     border-radius: 10px;
     background: #fff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-    border-left: 6px solid #90caf9;
-    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #90caf9; /* 减小左侧边框 */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .award-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.05) 100%);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
   }
 
   .award-item:hover {
-    background: #f7faff;
-    transform: translateX(4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    background: #fcfdff;
+    transform: translateY(-2px); /* 减小上浮距离 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .award-item:hover::after {
+    transform: translateX(100%);
   }
 
   .award-name {
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.9rem; /* 调整奖项名称字体大小 */
     color: #333;
     flex: 1;
+    transition: color 0.3s ease;
+    word-wrap: break-word; /* 确保长文本换行 */
+  }
+
+  .award-item:hover .award-name {
+    color: #1a237e;
   }
 
   .award-rank {
-    padding: 6px 14px;
+    padding: 5px 12px; /* 减小内边距 */
     border-radius: 20px;
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 0.8rem; /* 调整等级字体大小 */
     text-align: center;
-    min-width: 80px;
+    min-width: 70px; /* 减小最小宽度 */
     color: #fff;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
     white-space: nowrap;
+    transition: transform 0.3s ease;
   }
 
-  /* 奖项颜色等级 */
+  .award-item:hover .award-rank {
+    transform: scale(1.05);
+  }
+
+  /* 奖项颜色等级 - 增强渐变效果 */
   .level-0 { background: linear-gradient(135deg, #ffd700, #ffb300); color: #000; }
   .level-1 { background: linear-gradient(135deg, #ff5252, #e53935); }
   .level-2 { background: linear-gradient(135deg, #ff9800, #fb8c00); }
   .level-3 { background: linear-gradient(135deg, #4caf50, #43a047); }
   .level-other { background: linear-gradient(135deg, #607d8b, #455a64); }
 
-  /* 开源项目区块保持原样 */
+  /* 开源项目区块优化 */
   .open-source-section {
     background: #f9fafc;
     border-radius: 12px;
-    padding: 28px;
-    margin-top: 32px;
+    padding: 20px; /* 减小内边距 */
+    margin-top: 20px;
     text-align: center;
-    border: 1px dashed #ccc;
+    border: 1px dashed #e0e0e0;
+    position: relative;
+  }
+
+  .open-source-section h2 {
+    border-bottom-color: #e0e0e0;
+    color: #2d3748;
   }
 
   .open-source-buttons {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 15px; /* 减小按钮间距 */
     margin-top: 20px;
   }
 
   .open-source-btn {
     display: block;
-    width: 260px;
+    width: 100%; /* 默认占满宽度，大屏幕会自动调整 */
+    max-width: 280px; /* 最大宽度限制 */
     padding: 18px;
-    background: #fff;
+    background: white;
     color: #333;
-    border-radius: 12px;
+    border-radius: 10px;
     text-align: center;
     text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
-    border: 1px solid #eee;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0f0f0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .open-source-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #4285f4, #34a853);
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
   }
 
   .open-source-btn:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
-    border-color: #1976d2;
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.1);
+    border-color: #e0e0e0;
+  }
+
+  .open-source-btn:hover::before {
+    transform: translateX(0);
   }
 
   .open-source-btn h3 {
@@ -304,94 +393,153 @@
     font-size: 1.05rem;
     font-weight: 700;
     color: #1976d2;
+    transition: color 0.3s ease;
+  }
+
+  .open-source-btn:hover h3 {
+    color: #0d47a1;
   }
 
   .open-source-btn p {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 0.85rem; /* 调整描述文字大小 */
     color: #666;
-    line-height: 1.4;
+    line-height: 1.5;
   }
 
+  /* 底部文字美化 */
+  .award-container > p {
+    text-align: center;
+    margin-top: 30px; /* 减小顶部距离 */
+    color: #666;
+    font-style: italic;
+    font-size: 0.9rem; /* 调整字体大小 */
+    padding: 15px;
+    border-top: 1px solid #eee;
+  }
+
+  /* 移动端适配优化 */
   @media (max-width: 768px) {
     .award-list {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr; /* 单列显示 */
+      gap: 10px; /* 减小间距 */
     }
+    
     .award-item {
       flex-direction: column;
       align-items: flex-start;
+      padding: 12px 15px;
     }
+    
     .award-rank {
       margin-top: 8px;
       align-self: flex-start;
+      padding: 4px 10px;
+      font-size: 0.75rem;
     }
+    
     .open-source-btn {
       width: 100%;
+      padding: 15px;
+      margin-bottom: 5px;
+    }
+    
+    .award-section {
+      padding: 15px;
+      margin-bottom: 25px;
+    }
+    
+    .award-section h2 {
+      font-size: 1.25rem;
+      margin-bottom: 15px;
+      padding-bottom: 8px;
+    }
+    
+    /* 针对小屏幕手机的额外优化 */
+    @media (max-width: 480px) {
+      .award-name {
+        font-size: 0.85rem;
+      }
+      
+      .award-container {
+        padding: 10px;
+        font-size: 0.85rem;
+      }
+      
+      .open-source-btn h3 {
+        font-size: 1rem;
+      }
+      
+      .open-source-btn p {
+        font-size: 0.8rem;
+      }
     }
   }
 </style>
 
 <div class="award-section">
   <h2>社团荣誉</h2>
-  <div class="award-item" style="border-left-color: #FF6B6B;">
-    <div class="award-name">福建理工大学校级十佳社团</div>
-    <div class="award-rank level-other">十佳社团</div>
-  </div>
-  <div class="award-item" style="border-left-color: #FF6B6B;">
-    <div class="award-name">福建理工大学“我为同学做实事”项目大赛</div>
-    <div class="award-rank level-other">优秀奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #FF6B6B;">
-    <div class="award-name">福建省高校“科创类”社团精品项目评选活动</div>
-    <div class="award-rank level-3">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #FF6B6B;">
-    <div class="award-name">2018 年中国机器人大赛旅游类循线越野游</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #FF6B6B;">
-    <div class="award-name">2018 年中国机器人大赛旅游类抢道越野游</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #FF6B6B;">
-    <div class="award-name">2018 年中国机器人大赛旅游类探险游</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #FF6B6B;">
-    <div class="award-name">2018 年中国机器人大赛旅游类寻宝游</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #FF6B6B;">
-    <div class="award-name">2017 年中国机器人大赛旅游类循线越野游</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #FF6B6B;">
-    <div class="award-name">2017 年中国机器人大赛旅游类探险游</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #FF6B6B;">
-    <div class="award-name">2017 年中国机器人大赛旅游类抢道越野游</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #FF6B6B;">
-    <div class="award-name">2016 年中国机器人大赛旅游类循线越野游</div>
-    <div class="award-rank level-3">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #FF6B6B;">
-    <div class="award-name">2016 年中国机器人大赛旅游类探险游</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #FF6B6B;">
-    <div class="award-name">2016 年中国机器人大赛旅游类抢道越野游</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #FF6B6B;">
-    <div class="award-name">2015 年“安吉杯”中国机器人大赛l 型机器人循线越野游</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #FF6B6B;">
-    <div class="award-name">2015 年“安吉杯”中国机器人大赛l 型机器人探险游</div>
-    <div class="award-rank level-3">三等奖</div>
+  <div class="award-list">
+    <div class="award-item" style="border-left-color: #FF6B6B;">
+      <div class="award-name">福建理工大学校级十佳社团</div>
+      <div class="award-rank level-other">十佳社团</div>
+    </div>
+    <div class="award-item" style="border-left-color: #FF6B6B;">
+      <div class="award-name">福建理工大学“我为同学做实事”项目大赛</div>
+      <div class="award-rank level-other">优秀奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #FF6B6B;">
+      <div class="award-name">福建省高校“科创类”社团精品项目评选活动</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #FF6B6B;">
+      <div class="award-name">2018 年中国机器人大赛旅游类循线越野游</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #FF6B6B;">
+      <div class="award-name">2018 年中国机器人大赛旅游类抢道越野游</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #FF6B6B;">
+      <div class="award-name">2018 年中国机器人大赛旅游类探险游</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #FF6B6B;">
+      <div class="award-name">2018 年中国机器人大赛旅游类寻宝游</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #FF6B6B;">
+      <div class="award-name">2017 年中国机器人大赛旅游类循线越野游</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #FF6B6B;">
+      <div class="award-name">2017 年中国机器人大赛旅游类探险游</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #FF6B6B;">
+      <div class="award-name">2017 年中国机器人大赛旅游类抢道越野游</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #FF6B6B;">
+      <div class="award-name">2016 年中国机器人大赛旅游类循线越野游</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #FF6B6B;">
+      <div class="award-name">2016 年中国机器人大赛旅游类探险游</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #FF6B6B;">
+      <div class="award-name">2016 年中国机器人大赛旅游类抢道越野游</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #FF6B6B;">
+      <div class="award-name">2015 年“安吉杯”中国机器人大赛l 型机器人循线越野游</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #FF6B6B;">
+      <div class="award-name">2015 年“安吉杯”中国机器人大赛l 型机器人探险游</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
   </div>
 </div>
 
@@ -416,178 +564,181 @@
     </a>
   </div>
 </div>
+
 <div class="award-section">
   <h2>RoboMaster 赛事荣誉</h2>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster 2025机甲大师高校联盟赛(福建站)(英雄机器人)</div>
-    <div class="award-rank level-1">一等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster 2025机甲大师高校联盟赛(福建站)(哨兵机器人)</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster 2025机甲大师高校联盟赛(福建站)(步兵机器人)</div>
-    <div class="award-rank level-3">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster 2025机甲大师超级对抗赛区域赛(南部赛区)</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster 2025机甲大师超级对抗赛区域赛(步兵机器人)</div>
-    <div class="award-rank level-3">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster 2025机甲大师超级对抗赛区域赛(英雄机器人)</div>
-    <div class="award-rank level-3">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster 2025机甲大师超级对抗赛区域赛(工程机器人)</div>
-    <div class="award-rank level-3">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster 2025机甲大师超级对抗赛区域赛(哨兵机器人)</div>
-    <div class="award-rank level-1">一等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster 2025机甲大师超级对抗赛区域赛(空中机器人)</div>
-    <div class="award-rank level-3">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster 2025机甲大师超级对抗赛区域赛(飞镖系统)</div>
-    <div class="award-rank level-other">优秀奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster 2025机甲大师超级对抗赛区域赛(雷达系统)</div>
-    <div class="award-rank level-1">一等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster 2025机甲大师超级对抗赛全国赛</div>
-    <div class="award-rank level-3">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">全国三维数字化创新设计大赛17周年精英联赛(福建赛区)</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">全国三维数字化创新设计大赛17周年精英联赛(福建赛区)</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">全国三维数字化创新设计大赛17周年精英联赛(福建赛区)</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
+  <div class="award-list">
     <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">2025年福建省海洋装备设计大赛</div>
-    <div class="award-rank level-0">特等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">2025年全国大学生电子设计竞赛</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">2025年福建省大学生电子设计竞赛</div>
-    <div class="award-rank level-1">一等奖</div>
-  </div>
+      <div class="award-name">RoboMaster 2025机甲大师高校联盟赛(福建站)(英雄机器人)</div>
+      <div class="award-rank level-1">一等奖</div>
+    </div>
     <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster2024 机甲大师赛全国赛</div>
-    <div class="award-rank level-3">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster2024 机甲大师赛超级对抗赛全国赛</div>
-    <div class="award-rank level-2">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster2024 机甲大师高校联盟赛（福建站）3V3对抗赛（甲级队伍）</div>
-    <div class="award-rank level-3">一等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster2024 机甲大师高校联盟赛（福建站）步兵对抗赛（甲级队伍）</div>
-    <div class="award-rank level-3">一等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster2023 机甲大师赛全国赛</div>
-    <div class="award-rank level-3">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster2023 机甲大师赛区域赛（中部赛区）</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster2023 机甲大师高校联盟赛（广东站）3V3对抗赛（甲级队伍）</div>
-    <div class="award-rank level-3">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">2022年福建省工程训练大赛工程基础赛道-势能驱动车</div>
-    <div class="award-rank level-1">一等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">2022年福建省工程训练大赛智能+赛道-生活垃圾智能分类</div>
-    <div class="award-rank level-1">一等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster2022 机甲大师赛南部赛区</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster2021 机甲大师赛全国赛</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster2021 机甲大师赛南部赛区</div>
-    <div class="award-rank level-1">一等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">2021 台港澳大学生人工智能机器人邀请赛</div>
-    <div class="award-rank level-1">一等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster2020 机甲大师赛总决赛</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster2020 机甲大师赛（线上）</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster2020 机甲大师赛南部赛区</div>
-    <div class="award-rank level-1">一等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster2019 机甲大师赛总决赛</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster2019 机甲大师赛南部赛区</div>
-    <div class="award-rank level-1">一等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">2019年福建省工程训练大赛</div>
-    <div class="award-rank level-0">特等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">2019年福建省工程训练大赛</div>
-    <div class="award-rank level-0">特等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">2019年福建省工程训练大赛</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster2018 机甲大师赛总决赛</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster2018 机甲大师赛南部赛区</div>
-    <div class="award-rank level-1">一等奖</div>
-  </div>
-
-  <div class="award-item" style="border-left-color: #2196F3;">
-    <div class="award-name">RoboMaster2017 机甲大师赛华南赛区</div>
-    <div class="award-rank level-3">三等奖</div>
+      <div class="award-name">RoboMaster 2025机甲大师高校联盟赛(福建站)(哨兵机器人)</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster 2025机甲大师高校联盟赛(福建站)(步兵机器人)</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster 2025机甲大师超级对抗赛区域赛(南部赛区)</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster 2025机甲大师超级对抗赛区域赛(步兵机器人)</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster 2025机甲大师超级对抗赛区域赛(英雄机器人)</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster 2025机甲大师超级对抗赛区域赛(工程机器人)</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster 2025机甲大师超级对抗赛区域赛(哨兵机器人)</div>
+      <div class="award-rank level-1">一等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster 2025机甲大师超级对抗赛区域赛(空中机器人)</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster 2025机甲大师超级对抗赛区域赛(飞镖系统)</div>
+      <div class="award-rank level-other">优秀奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster 2025机甲大师超级对抗赛区域赛(雷达系统)</div>
+      <div class="award-rank level-1">一等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster 2025机甲大师超级对抗赛全国赛</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">全国三维数字化创新设计大赛17周年精英联赛(福建赛区)</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">全国三维数字化创新设计大赛17周年精英联赛(福建赛区)</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">全国三维数字化创新设计大赛17周年精英联赛(福建赛区)</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">2025年福建省海洋装备设计大赛</div>
+      <div class="award-rank level-0">特等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">2025年全国大学生电子设计竞赛</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">2025年福建省大学生电子设计竞赛</div>
+      <div class="award-rank level-1">一等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster2024 机甲大师赛全国赛</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster2024 机甲大师赛超级对抗赛全国赛</div>
+      <div class="award-rank level-2">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster2024 机甲大师高校联盟赛（福建站）3V3对抗赛（甲级队伍）</div>
+      <div class="award-rank level-3">一等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster2024 机甲大师高校联盟赛（福建站）步兵对抗赛（甲级队伍）</div>
+      <div class="award-rank level-3">一等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster2023 机甲大师赛全国赛</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster2023 机甲大师赛区域赛（中部赛区）</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster2023 机甲大师高校联盟赛（广东站）3V3对抗赛（甲级队伍）</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">2022年福建省工程训练大赛工程基础赛道-势能驱动车</div>
+      <div class="award-rank level-1">一等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">2022年福建省工程训练大赛智能+赛道-生活垃圾智能分类</div>
+      <div class="award-rank level-1">一等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster2022 机甲大师赛南部赛区</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster2021 机甲大师赛全国赛</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster2021 机甲大师赛南部赛区</div>
+      <div class="award-rank level-1">一等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">2021 台港澳大学生人工智能机器人邀请赛</div>
+      <div class="award-rank level-1">一等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster2020 机甲大师赛总决赛</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster2020 机甲大师赛（线上）</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster2020 机甲大师赛南部赛区</div>
+      <div class="award-rank level-1">一等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster2019 机甲大师赛总决赛</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster2019 机甲大师赛南部赛区</div>
+      <div class="award-rank level-1">一等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">2019年福建省工程训练大赛</div>
+      <div class="award-rank level-0">特等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">2019年福建省工程训练大赛</div>
+      <div class="award-rank level-0">特等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">2019年福建省工程训练大赛</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster2018 机甲大师赛总决赛</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster2018 机甲大师赛南部赛区</div>
+      <div class="award-rank level-1">一等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #2196F3;">
+      <div class="award-name">RoboMaster2017 机甲大师赛华南赛区</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
   </div>
 </div>
+
 <div class="award-section open-source-section">
   <h2>RoboCon 开源项目</h2>
   <div class="open-source-buttons">
@@ -601,109 +752,109 @@
     </a>
   </div>
 </div>
+
 <div class="award-section">
   <h2>RoboCon 赛事荣誉</h2>
-  <div class="award-item" style="border-left-color: #4CAF50;">
-    <div class="award-name">ROBOCON 2025 仿生足式机器人挑战赛(竞速赛)</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #4CAF50;">
-    <div class="award-name">ROBOCON 2025 仿生足式机器人挑战赛(竞速赛)</div>
-    <div class="award-rank level-3">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #4CAF50;">
-    <div class="award-name">ROBOCON 2025 仿生足式机器人挑战赛(竞速赛)</div>
-    <div class="award-rank level-3">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #4CAF50;">
-    <div class="award-name">ROBOCON 2025 仿生足式机器人挑战赛(障碍赛)</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #4CAF50;">
-    <div class="award-name">ROBOCON 2025 仿生足式机器人挑战赛(障碍赛)</div>
-    <div class="award-rank level-3">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #4CAF50;">
-    <div class="award-name">ROBOCON 2025 仿生足式机器人挑战赛(障碍赛)</div>
-    <div class="award-rank level-3">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #4CAF50;">
-    <div class="award-name">ROBOCON 2025 仿生足式机器人挑战赛(越野赛)</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #4CAF50;">
-    <div class="award-name">ROBOCON 2025 仿生足式机器人挑战赛(越野赛)</div>
-    <div class="award-rank level-3">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #4CAF50;">
-    <div class="award-name">ROBOCON 2025 仿生足式机器人挑战赛(越野赛)</div>
-    <div class="award-rank level-3">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #4CAF50;">
-    <div class="award-name">ROBOCON 2025 "飞身上篮"机器人篮球竞技赛</div>
-    <div class="award-rank level-3">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #4CAF50;">
-    <div class="award-name">ROBOCON 2025 "飞身上篮"机器人篮球技能赛(投篮技能赛)</div>
-    <div class="award-rank level-3">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #4CAF50;">
-    <div class="award-name">ROBOCON 2025 "飞身上篮"机器人篮球技能赛(运（传）球技能赛)</div>
-    <div class="award-rank level-3">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #4CAF50;">
-    <div class="award-name">ROBOCON 2025 机器人排球挑战赛</div>
-    <div class="award-rank level-3">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #4CAF50;">
-    <div class="award-name">全国三维数字化创新设计大赛17周年精英联赛(福建赛区)</div>
-    <div class="award-rank level-0">特等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #4CAF50;">
-    <div class="award-name">全国三维数字化创新设计大赛17周年精英联赛(福建赛区)</div>
-    <div class="award-rank level-1">一等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #4CAF50;">
-    <div class="award-name">ROBOCON 2023 吴哥之花赛</div>
-    <div class="award-rank level-3">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #4CAF50;">
-    <div class="award-name">ROBOCON 2023 机器马术赛(竞速)</div>
-    <div class="award-rank level-3">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #4CAF50;">
-    <div class="award-name">ROBOCON 2023 机器马术(障碍)赛</div>
-    <div class="award-rank level-3">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #4CAF50;">
-    <div class="award-name">ROBOCON2022 同创辉煌赛</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #4CAF50;">
-    <div class="award-name">ROBOCON2021 投壶行觞比赛</div>
-    <div class="award-rank level-3">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #4CAF50;">
-    <div class="award-name">ROBOCON2021 机器马术赛</div>
-    <div class="award-rank level-3">三等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #4CAF50;">
-    <div class="award-name">ROBOCON2020 绿茵争锋线上赛</div>
-    <div class="award-rank level-2">二等奖</div>
-  </div>
-  <div class="award-item" style="border-left-color: #4CAF50;">
-    <div class="award-name">仿生足式机器人挑战赛(竞速赛)</div>
-    <div class="award-rank level-3">三等奖</div>
+  <div class="award-list">
+    <div class="award-item" style="border-left-color: #4CAF50;">
+      <div class="award-name">ROBOCON 2025 仿生足式机器人挑战赛(竞速赛)</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #4CAF50;">
+      <div class="award-name">ROBOCON 2025 仿生足式机器人挑战赛(竞速赛)</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #4CAF50;">
+      <div class="award-name">ROBOCON 2025 仿生足式机器人挑战赛(竞速赛)</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #4CAF50;">
+      <div class="award-name">ROBOCON 2025 仿生足式机器人挑战赛(障碍赛)</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #4CAF50;">
+      <div class="award-name">ROBOCON 2025 仿生足式机器人挑战赛(障碍赛)</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #4CAF50;">
+      <div class="award-name">ROBOCON 2025 仿生足式机器人挑战赛(障碍赛)</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #4CAF50;">
+      <div class="award-name">ROBOCON 2025 仿生足式机器人挑战赛(越野赛)</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #4CAF50;">
+      <div class="award-name">ROBOCON 2025 仿生足式机器人挑战赛(越野赛)</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #4CAF50;">
+      <div class="award-name">ROBOCON 2025 仿生足式机器人挑战赛(越野赛)</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #4CAF50;">
+      <div class="award-name">ROBOCON 2025 "飞身上篮"机器人篮球竞技赛</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #4CAF50;">
+      <div class="award-name">ROBOCON 2025 "飞身上篮"机器人篮球技能赛(投篮技能赛)</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #4CAF50;">
+      <div class="award-name">ROBOCON 2025 "飞身上篮"机器人篮球技能赛(运（传）球技能赛)</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #4CAF50;">
+      <div class="award-name">ROBOCON 2025 机器人排球挑战赛</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #4CAF50;">
+      <div class="award-name">全国三维数字化创新设计大赛17周年精英联赛(福建赛区)</div>
+      <div class="award-rank level-0">特等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #4CAF50;">
+      <div class="award-name">全国三维数字化创新设计大赛17周年精英联赛(福建赛区)</div>
+      <div class="award-rank level-1">一等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #4CAF50;">
+      <div class="award-name">ROBOCON 2023 吴哥之花赛</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #4CAF50;">
+      <div class="award-name">ROBOCON 2023 机器马术赛(竞速)</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #4CAF50;">
+      <div class="award-name">ROBOCON 2023 机器马术(障碍)赛</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #4CAF50;">
+      <div class="award-name">ROBOCON2022 同创辉煌赛</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #4CAF50;">
+      <div class="award-name">ROBOCON2021 投壶行觞比赛</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #4CAF50;">
+      <div class="award-name">ROBOCON2021 机器马术赛</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #4CAF50;">
+      <div class="award-name">ROBOCON2020 绿茵争锋线上赛</div>
+      <div class="award-rank level-2">二等奖</div>
+    </div>
+    <div class="award-item" style="border-left-color: #4CAF50;">
+      <div class="award-name">仿生足式机器人挑战赛(竞速赛)</div>
+      <div class="award-rank level-3">三等奖</div>
+    </div>
   </div>
 </div>
 
-
-
-<p style="text-align: center; margin-top: 40px; color: #666; font-style: italic;">
+<p>
   荣誉属于过去，创新永不止步 | 福建理工大学学生RC机器人协会
 </p>
 </div>
-
 
       </div>
       
