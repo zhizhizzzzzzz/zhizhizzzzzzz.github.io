@@ -191,7 +191,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-08-31 13:59:36" itemprop="dateModified" datetime="2025-08-31T13:59:36+08:00">2025-08-31</time>
+                <time title="修改时间：2025-08-31 14:07:30" itemprop="dateModified" datetime="2025-08-31T14:07:30+08:00">2025-08-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -215,10 +215,12 @@
 
       
           <style>
-  /* 基础视频样式 */
+  /* 基础视频样式 - 保持原有比例 */
   .video-item {
     position: relative;
     width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
     overflow: hidden;
     border-radius: 6px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.08);
@@ -226,8 +228,10 @@
   }
   .video-item iframe {
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
     border: none;
   }
 
@@ -238,9 +242,6 @@
     gap: 10px;
     margin: 25px 0;
   }
-  .video-gallery-first .video-item {
-    padding-bottom: 56.25%; /* 16:9 比例 */
-  }
   
   .video-gallery-rest {
     display: grid;
@@ -248,43 +249,48 @@
     gap: 10px;
     margin: 10px 0;
   }
-  .video-gallery-rest .video-item {
-    padding-bottom: 56.25%; /* 16:9 比例 */
-  }
 
-  /* 移动端布局 - 统一每行2个，第一行视频较小 */
+  /* 移动端布局 - 统一每行2个 */
   @media (max-width: 768px) {
     .video-gallery-first,
     .video-gallery-rest {
       grid-template-columns: repeat(2, 1fr);
     }
     
-    /* 第一行视频较小（4:3比例） */
-    .video-gallery-first .video-item {
-      padding-bottom: 75%; /* 4:3 比例，比16:9更"方"一些 */
+    /* 比赛卡片布局 - 每行两个 */
+    .competition-cards {
+      flex-direction: column;
+    }
+    .competition-cards a {
+      min-width: 100%;
+      max-width: 100%;
     }
     
-    /* 其余行保持正常大小 */
-    .video-gallery-rest .video-item {
-      padding-bottom: 56.25%; /* 16:9 比例 */
+    /* 组别卡片布局 - 每行两个 */
+    .team-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 
   /* 超小屏幕优化 */
-  @media (max-width: 400px) {
+  @media (max-width: 480px) {
     .video-gallery-first,
     .video-gallery-rest {
       gap: 8px;
     }
     
-    /* 第一行视频更小 */
-    .video-gallery-first .video-item {
-      padding-bottom: 60%; /* 更紧凑的比例 */
+    /* 比赛卡片布局 - 每行一个 */
+    .competition-cards a {
+      min-width: 100%;
+      max-width: 100%;
+    }
+    
+    /* 组别卡片布局 - 每行一个 */
+    .team-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>
-
-
 
 <div class="hero-banner" style="background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%); border-radius: 12px; padding: 30px; margin: 0 0 30px; color: white; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
   <div style="max-width: 800px; margin: 0 auto; text-align: center;">
@@ -349,16 +355,14 @@
     </div>
   </a>
 </div>
-
 <div class="video-gallery-first">
-  <div class="video-item"><iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114617980291815&bvid=BV1SW78zFEnq&cid=30297427491&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>
-  <div class="video-item"><iframe src="//player.bilibili.com/player.html?isOutside=true&aid=115117975019394&bvid=BV1jhhizoErD&cid=32054838033&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>
+  <div><iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114617980291815&bvid=BV1SW78zFEnq&cid=30297427491&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>
+  <div><iframe src="//player.bilibili.com/player.html?isOutside=true&aid=115117975019394&bvid=BV1jhhizoErD&cid=32054838033&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>
 </div>
-
 <div class="video-gallery-rest">
-  <div class="video-item"><iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114971912445859&bvid=BV1CgtVzcE9Y&cid=31489592502&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>
-  <div class="video-item"><iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114525906933503&bvid=BV1NQJTz8EsZ&cid=30015818557&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>
-  <div class="video-item"><iframe src="//player.bilibili.com/player.html?isOutside=true&aid=1253425276&bvid=BV1VJ4m1H7Ft&cid=1514037188&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>
+  <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114971912445859&bvid=BV1CgtVzcE9Y&cid=31489592502&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+  <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114525906933503&bvid=BV1NQJTz8EsZ&cid=30015818557&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+  <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=1253425276&bvid=BV1VJ4m1H7Ft&cid=1514037188&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 </div>
 
 
