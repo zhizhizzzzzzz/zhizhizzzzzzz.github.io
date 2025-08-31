@@ -191,7 +191,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-08-31 14:12:09" itemprop="dateModified" datetime="2025-08-31T14:12:09+08:00">2025-08-31</time>
+                <time title="修改时间：2025-08-31 14:15:43" itemprop="dateModified" datetime="2025-08-31T14:15:43+08:00">2025-08-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -250,48 +250,45 @@
     margin: 10px 0;
   }
 
-  /* 移动端布局 - 统一每行2个 */
+  /* 移动端布局 - 768px以下 */
   @media (max-width: 768px) {
     .video-gallery-first,
     .video-gallery-rest {
       grid-template-columns: repeat(2, 1fr);
     }
     
-    /* 比赛卡片布局 - 保持并列 */
+    /* 比赛卡片布局 - 强制每行两个 */
     .competition-cards {
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-    .competition-cards a {
-      min-width: calc(50% - 10px);
-      max-width: calc(50% - 10px);
-    }
-    
-    /* 组别卡片布局 - 每行两个 */
-    .team-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-
-  /* 超小屏幕优化 */
-  @media (max-width: 480px) {
-    .video-gallery-first,
-    .video-gallery-rest {
-      gap: 8px;
-    }
-    
-    /* 比赛卡片布局 - 超小屏幕改为单列 */
-    .competition-cards {
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
     }
     .competition-cards a {
       min-width: 100%;
       max-width: 100%;
     }
     
-    /* 组别卡片布局 - 每行一个 */
+    /* 组别卡片布局 - 强制每行两个 */
     .team-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  /* 超小屏幕优化 - 保持每行两个 */
+  @media (max-width: 480px) {
+    .video-gallery-first,
+    .video-gallery-rest {
+      gap: 8px;
+    }
+    
+    /* 比赛卡片 - 保持每行两个 */
+    .competition-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* 组别卡片 - 保持每行两个 */
+    .team-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 </style>
