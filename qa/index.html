@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"zhizhizzzzzzz.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content=".faq-card {     border-radius: 12px;     box-shadow: 0 4px 12px rgba(0,0,0,0.08);     padding: 24px;     margin-bottom: 28px;     background: white;     transition: transform 0.2s;     border-top:">
+  <meta name="description" content=".faq-card {     border-radius: 12px;     box-shadow: 0 4px 12px rgba(0,0,0,0.08);     padding: 24px;     margin-bottom: 28px;     background: white;     transition: transform 0.2s, box-shadow 0.2s;">
 <meta property="og:type" content="website">
 <meta property="og:title" content="常见问题">
 <meta property="og:url" content="https://zhizhizzzzzzz.github.io/qa/index.html">
 <meta property="og:site_name" content="RC机器人协会">
-<meta property="og:description" content=".faq-card {     border-radius: 12px;     box-shadow: 0 4px 12px rgba(0,0,0,0.08);     padding: 24px;     margin-bottom: 28px;     background: white;     transition: transform 0.2s;     border-top:">
+<meta property="og:description" content=".faq-card {     border-radius: 12px;     box-shadow: 0 4px 12px rgba(0,0,0,0.08);     padding: 24px;     margin-bottom: 28px;     background: white;     transition: transform 0.2s, box-shadow 0.2s;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-08-06T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-08-29T18:30:53.202Z">
+<meta property="article:modified_time" content="2025-08-31T11:49:30.229Z">
 <meta property="article:author" content="zhizhizzzzzzz@gmail.com">
 <meta property="article:tag" content="问答">
 <meta property="article:tag" content="帮助">
@@ -190,7 +190,7 @@
     padding: 24px;
     margin-bottom: 28px;
     background: white;
-    transition: transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
     border-top: 4px solid;
   }
   .faq-card:hover {
@@ -210,6 +210,59 @@
     margin-bottom: 16px;
     font-size: 1.2em;
     color: #2c3e50;
+  }
+  
+  /* 按钮样式 */
+  .faq-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+  }
+  
+  .faq-button {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center;
+    flex: 1;
+    min-width: 140px;
+    max-width: 220px;
+  }
+  
+  .home-button {
+    background-color: #2c3e50;
+    color: white;
+    border: 2px solid #2c3e50;
+  }
+  
+  .competitions-button {
+    background-color: white;
+    color: #2c3e50;
+    border: 2px solid #2c3e50;
+  }
+  
+  .home-button:hover {
+    background-color: #34495e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .competitions-button:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  @media (max-width: 768px) {
+    .faq-button {
+      padding: 10px 20px;
+      font-size: 0.9em;
+    }
   }
 </style>
 
@@ -284,6 +337,11 @@
   <div class="faq-tag" style="background-color: #FFD700;">发展</div>
   <h3 class="faq-question">非工科专业的同学适合加入吗？</h3>
   <p>非常适合！除了技术研发岗位，赛事还需要运营管理、宣传推广、财务统计等方面的人才。非工科专业的同学可以加入运营组，负责赛事策划、新媒体宣传、团队管理等工作，在实践中提升组织协调和综合能力。协会欢迎不同专业的同学加入，多元化的团队结构更有利于项目的开展。</p>
+</div>
+
+<div class="faq-buttons">
+  <a href="/" class="faq-button home-button">返回首页</a>
+  <a href="/competitions/" class="faq-button competitions-button">查看成果</a>
 </div>
 
       </div>
@@ -362,10 +420,6 @@
           <span class="site-state-item-count">1</span>
           <span class="site-state-item-name">日志</span>
         </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">分类</span>
       </div>
       <div class="site-state-item site-state-tags">
         <span class="site-state-item-count">2</span>
