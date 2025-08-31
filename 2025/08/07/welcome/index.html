@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"zhizhizzzzzzz.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content=".video-gallery-first {     display: grid;     grid-template-columns: repeat(2, 1fr);     gap: 10px;     margin: 25px 0;   }   .video-gallery-rest {     display: grid;     grid-template-columns: rep">
+  <meta name="description" content=".video-gallery-first, .video-gallery-rest {     display: grid;     gap: 10px;     margin: 25px 0;   }      &#x2F;* 桌面端布局 *&#x2F;   .video-gallery-first {     grid-template-columns: repeat(2, 1fr);   }   .vid">
 <meta property="og:type" content="article">
 <meta property="og:title" content="欢迎来到福建理工大学RC机器人协会！">
 <meta property="og:url" content="https://zhizhizzzzzzz.github.io/2025/08/07/welcome/index.html">
 <meta property="og:site_name" content="RC机器人协会">
-<meta property="og:description" content=".video-gallery-first {     display: grid;     grid-template-columns: repeat(2, 1fr);     gap: 10px;     margin: 25px 0;   }   .video-gallery-rest {     display: grid;     grid-template-columns: rep">
+<meta property="og:description" content=".video-gallery-first, .video-gallery-rest {     display: grid;     gap: 10px;     margin: 25px 0;   }      &#x2F;* 桌面端布局 *&#x2F;   .video-gallery-first {     grid-template-columns: repeat(2, 1fr);   }   .vid">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-08-06T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-08-30T20:32:33.671Z">
+<meta property="article:modified_time" content="2025-08-31T05:29:13.748Z">
 <meta property="article:author" content="zhizhizzzzzzz@gmail.com">
 <meta property="article:tag" content="欢迎">
 <meta property="article:tag" content="招新">
@@ -194,7 +194,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-08-31 04:32:33" itemprop="dateModified" datetime="2025-08-31T04:32:33+08:00">2025-08-31</time>
+                <time title="修改时间：2025-08-31 13:29:13" itemprop="dateModified" datetime="2025-08-31T13:29:13+08:00">2025-08-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -218,18 +218,48 @@
 
       
         <style>
-  .video-gallery-first {
+  .video-gallery-first, .video-gallery-rest {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     margin: 25px 0;
   }
-  .video-gallery-rest {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin: 10px 0;
+  
+  /* 桌面端布局 */
+  .video-gallery-first {
+    grid-template-columns: repeat(2, 1fr);
   }
+  .video-gallery-rest {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* 平板端布局 */
+  @media (max-width: 900px) {
+    .video-gallery-rest {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* 移动端布局 - 强制保持2+3布局 */
+  @media (max-width: 600px) {
+    .video-gallery-first {
+      grid-template-columns: 1fr;
+    }
+    .video-gallery-rest {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    /* 确保第三行视频单独一行 */
+    .video-gallery-rest iframe:nth-child(3) {
+      grid-column: 1 / -1;
+    }
+  }
+  
+  /* 超小屏幕优化 */
+  @media (max-width: 400px) {
+    .video-gallery-first, .video-gallery-rest {
+      gap: 8px;
+    }
+  }
+
   .video-item {
     position: relative;
     width: 100%;
@@ -246,15 +276,7 @@
     width: 100%; height: 100%;
     border: none;
   }
-  @media (max-width: 900px) {
-    .video-gallery-rest { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 600px) {
-    .video-gallery-first, .video-gallery-rest { grid-template-columns: 1fr; }
-  }
 </style>
-
-
 
 
 <div class="hero-banner" style="background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%); border-radius: 12px; padding: 30px; margin: 0 0 30px; color: white; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
@@ -340,85 +362,96 @@
   </h2>
   <p style="margin-top: 10px; color: #6c757d;">选择你感兴趣的领域，开启机器人技术之旅</p>
 </div>
-
 <div class="team-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 50px;">
-  <div class="team-card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-    <div style="background: linear-gradient(135deg, #5cb85c 0%, #449d44 100%); padding: 18px; color: white; display: flex; align-items: center; gap: 12px;">
-      <div style="font-size: 1.8rem;">⚙️</div>
-      <h3 style="margin: 0; font-size: 1.4rem;">机械组</h3>
-    </div>
-    <div style="padding: 22px;">
-      <p style="margin: 0; font-size: 1.1rem;">从CAD建模到实体搭建，亲手打造钢铁之躯！</p>
-      <div style="margin-top: 15px; background: #f8f9fa; padding: 12px; border-radius: 8px; border-left: 3px solid #5cb85c;">
-        <p style="margin: 0; color: #5cb85c; font-size: 0.95rem;">掌握技能：SolidWorks · 机械设计 · 3D打印</p>
+  <a href="/groups/mechanical" class="team-card-link" style="text-decoration: none;">
+    <div class="team-card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s; cursor: pointer;">
+      <div style="background: linear-gradient(135deg, #5cb85c 0%, #449d44 100%); padding: 18px; color: white; display: flex; align-items: center; gap: 12px;">
+        <div style="font-size: 1.8rem;">⚙️</div>
+        <h3 style="margin: 0; font-size: 1.4rem;">机械组</h3>
+      </div>
+      <div style="padding: 22px;">
+        <p style="margin: 0; font-size: 1.1rem;">从CAD建模到实体搭建，亲手打造钢铁之躯！</p>
+        <div style="margin-top: 15px; background: #f8f9fa; padding: 12px; border-radius: 8px; border-left: 3px solid #5cb85c;">
+          <p style="margin: 0; color: #5cb85c; font-size: 0.95rem;">掌握技能：SolidWorks · 机械设计 · 3D打印</p>
+        </div>
       </div>
     </div>
-  </div>
+  </a>
 
-  <div class="team-card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-    <div style="background: linear-gradient(135deg, #f0ad4e 0%, #ec971f 100%); padding: 18px; color: white; display: flex; align-items: center; gap: 12px;">
-      <div style="font-size: 1.8rem;">🔌</div>
-      <h3 style="margin: 0; font-size: 1.4rem;">电控组</h3>
-    </div>
-    <div style="padding: 22px;">
-      <p style="margin: 0; font-size: 1.1rem;">玩转电路板与代码，赋予机器人灵魂与动力！</p>
-      <div style="margin-top: 15px; background: #f8f9fa; padding: 12px; border-radius: 8px; border-left: 3px solid #f0ad4e;">
-        <p style="margin: 0; color: #f0ad4e; font-size: 0.95rem;">掌握技能：STM32 · C/C++ · 嵌入式开发</p>
+  <a href="/groups/electronic-control" class="team-card-link" style="text-decoration: none;">
+    <div class="team-card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s; cursor: pointer;">
+      <div style="background: linear-gradient(135deg, #f0ad4e 0%, #ec971f 100%); padding: 18px; color: white; display: flex; align-items: center; gap: 12px;">
+        <div style="font-size: 1.8rem;">🔌</div>
+        <h3 style="margin: 0; font-size: 1.4rem;">电控组</h3>
+      </div>
+      <div style="padding: 22px;">
+        <p style="margin: 0; font-size: 1.1rem;">玩转电路板与代码，赋予机器人灵魂与动力！</p>
+        <div style="margin-top: 15px; background: #f8f9fa; padding: 12px; border-radius: 8px; border-left: 3px solid #f0ad4e;">
+          <p style="margin: 0; color: #f0ad4e; font-size: 0.95rem;">掌握技能：STM32 · C/C++ · 嵌入式开发</p>
+        </div>
       </div>
     </div>
-  </div>
+  </a>
 
-  <div class="team-card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-    <div style="background: linear-gradient(135deg, #d9534f 0%, #c9302c 100%); padding: 18px; color: white; display: flex; align-items: center; gap: 12px;">
-      <div style="font-size: 1.8rem;">🔋</div>
-      <h3 style="margin: 0; font-size: 1.4rem;">硬件组</h3>
-    </div>
-    <div style="padding: 22px;">
-      <p style="margin: 0; font-size: 1.1rem;">硬件选型、焊接调试，构建稳定的电子神经系统！</p>
-      <div style="margin-top: 15px; background: #f8f9fa; padding: 12px; border-radius: 8px; border-left: 3px solid #d9534f;">
-        <p style="margin: 0; color: #d9534f; font-size: 0.95rem;">掌握技能：PCB设计 · 电路调试 · 焊接技术</p>
+  <a href="/groups/hardware" class="team-card-link" style="text-decoration: none;">
+    <div class="team-card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s; cursor: pointer;">
+      <div style="background: linear-gradient(135deg, #d9534f 0%, #c9302c 100%); padding: 18px; color: white; display: flex; align-items: center; gap: 12px;">
+        <div style="font-size: 1.8rem;">🔋</div>
+        <h3 style="margin: 0; font-size: 1.4rem;">硬件组</h3>
+      </div>
+      <div style="padding: 22px;">
+        <p style="margin: 0; font-size: 1.1rem;">硬件选型、焊接调试，构建稳定的电子神经系统！</p>
+        <div style="margin-top: 15px; background: #f8f9fa; padding: 12px; border-radius: 8px; border-left: 3px solid #d9534f;">
+          <p style="margin: 0; color: #d9534f; font-size: 0.95rem;">掌握技能：PCB设计 · 电路调试 · 焊接技术</p>
+        </div>
       </div>
     </div>
-  </div>
+  </a>
 
-  <div class="team-card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-    <div style="background: linear-gradient(135deg, #5bc0de 0%, #2aabd2 100%); padding: 18px; color: white; display: flex; align-items: center; gap: 12px;">
-      <div style="font-size: 1.8rem;">👁️</div>
-      <h3 style="margin: 0; font-size: 1.4rem;">视觉组</h3>
-    </div>
-    <div style="padding: 22px;">
-      <p style="margin: 0; font-size: 1.1rem;">机器视觉算法研发，让机器人拥有"火眼金睛"！</p>
-      <div style="margin-top: 15px; background: #f8f9fa; padding: 12px; border-radius: 8px; border-left: 3px solid #5bc0de;">
-        <p style="margin: 0; color: #5bc0de; font-size: 0.95rem;">掌握技能：OpenCV · 深度学习 · 图像处理</p>
+  <a href="/groups/vision" class="team-card-link" style="text-decoration: none;">
+    <div class="team-card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s; cursor: pointer;">
+      <div style="background: linear-gradient(135deg, #5bc0de 0%, #2aabd2 100%); padding: 18px; color: white; display: flex; align-items: center; gap: 12px;">
+        <div style="font-size: 1.8rem;">👁️</div>
+        <h3 style="margin: 0; font-size: 1.4rem;">视觉组</h3>
+      </div>
+      <div style="padding: 22px;">
+        <p style="margin: 0; font-size: 1.1rem;">机器视觉算法研发，让机器人拥有"火眼金睛"！</p>
+        <div style="margin-top: 15px; background: #f8f9fa; padding: 12px; border-radius: 8px; border-left: 3px solid #5bc0de;">
+          <p style="margin: 0; color: #5bc0de; font-size: 0.95rem;">掌握技能：OpenCV · 深度学习 · 图像处理</p>
+        </div>
       </div>
     </div>
-  </div>
+  </a>
 
-  <div class="team-card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-    <div style="background: linear-gradient(135deg, #337ab7 0%, #2a5d8a 100%); padding: 18px; color: white; display: flex; align-items: center; gap: 12px;">
-      <div style="font-size: 1.8rem;">📸</div>
-      <h3 style="margin: 0; font-size: 1.4rem;">宣传组</h3>
-    </div>
-    <div style="padding: 22px;">
-      <p style="margin: 0; font-size: 1.1rem;">用镜头和文字记录团队成长，打造协会高光时刻！</p>
-      <div style="margin-top: 15px; background: #f8f9fa; padding: 12px; border-radius: 8px; border-left: 3px solid #337ab7;">
-        <p style="margin: 0; color: #337ab7; font-size: 0.95rem;">掌握技能：摄影剪辑 · 新媒体运营 · 内容创作</p>
+  <a href="/groups/media" class="team-card-link" style="text-decoration: none;">
+    <div class="team-card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s; cursor: pointer;">
+      <div style="background: linear-gradient(135deg, #337ab7 0%, #2a5d8a 100%); padding: 18px; color: white; display: flex; align-items: center; gap: 12px;">
+        <div style="font-size: 1.8rem;">📸</div>
+        <h3 style="margin: 0; font-size: 1.4rem;">宣传组</h3>
+      </div>
+      <div style="padding: 22px;">
+        <p style="margin: 0; font-size: 1.1rem;">用镜头和文字记录团队成长，打造协会高光时刻！</p>
+        <div style="margin-top: 15px; background: #f8f9fa; padding: 12px; border-radius: 8px; border-left: 3px solid #337ab7;">
+          <p style="margin: 0; color: #337ab7; font-size: 0.95rem;">掌握技能：摄影剪辑 · 新媒体运营 · 内容创作</p>
+        </div>
       </div>
     </div>
-  </div>
+  </a>
 
-  <div class="team-card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-    <div style="background: linear-gradient(135deg, #8e44ad 0%, #732d91 100%); padding: 18px; color: white; display: flex; align-items: center; gap: 12px;">
-      <div style="font-size: 1.8rem;">📊</div>
-      <h3 style="margin: 0; font-size: 1.4rem;">运营组</h3>
-    </div>
-    <div style="padding: 22px;">
-      <p style="margin: 0; font-size: 1.1rem;">赛事统筹、资源管理，保障战队高效运转！</p>
-      <div style="margin-top: 15px; background: #f8f9fa; padding: 12px; border-radius: 8px; border-left: 3px solid #8e44ad;">
-        <p style="margin: 0; color: #8e44ad; font-size: 0.95rem;">掌握技能：项目管理 · 资源协调 · 活动策划</p>
+  <a href="/groups/operations" class="team-card-link" style="text-decoration: none;">
+    <div class="team-card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s; cursor: pointer;">
+      <div style="background: linear-gradient(135deg, #8e44ad 0%, #732d91 100%); padding: 18px; color: white; display: flex; align-items: center; gap: 12px;">
+        <div style="font-size: 1.8rem;">📊</div>
+        <h3 style="margin: 0; font-size: 1.4rem;">运营组</h3>
+      </div>
+      <div style="padding: 22px;">
+        <p style="margin: 0; font-size: 1.1rem;">赛事统筹、资源管理，保障战队高效运转！</p>
+        <div style="margin-top: 15px; background: #f8f9fa; padding: 12px; border-radius: 8px; border-left: 3px solid #8e44ad;">
+          <p style="margin: 0; color: #8e44ad; font-size: 0.95rem;">掌握技能：项目管理 · 资源协调 · 活动策划</p>
+        </div>
       </div>
     </div>
-  </div>
+  </a>
 </div>
 
 <div class="training-section" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 12px; padding: 30px; margin: 40px 0; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
