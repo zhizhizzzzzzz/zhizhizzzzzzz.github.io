@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"zhizhizzzzzzz.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="&#x2F;* 基础视频样式 - 保持原有比例 *&#x2F;   .video-item {     position: relative;     width: 100%;     padding-bottom: 56.25%;     height: 0;     overflow: hidden;     border-radius: 6px;     box-shadow: 0 2px 6px rgb">
+  <meta name="description" content="&#x2F;* 比赛卡片布局 - 强制每行两个 *&#x2F;   .competition-cards {     display: grid;     grid-template-columns: repeat(2, 1fr);     gap: 20px;     margin-bottom: 40px;   }      &#x2F;* 组别卡片布局 - 强制每行两个 *&#x2F;   .team-grid {">
 <meta property="og:type" content="article">
 <meta property="og:title" content="欢迎来到福建理工大学RC机器人协会！">
 <meta property="og:url" content="https://zhizhizzzzzzz.github.io/2025/08/07/welcome/index.html">
 <meta property="og:site_name" content="RC机器人协会">
-<meta property="og:description" content="&#x2F;* 基础视频样式 - 保持原有比例 *&#x2F;   .video-item {     position: relative;     width: 100%;     padding-bottom: 56.25%;     height: 0;     overflow: hidden;     border-radius: 6px;     box-shadow: 0 2px 6px rgb">
+<meta property="og:description" content="&#x2F;* 比赛卡片布局 - 强制每行两个 *&#x2F;   .competition-cards {     display: grid;     grid-template-columns: repeat(2, 1fr);     gap: 20px;     margin-bottom: 40px;   }      &#x2F;* 组别卡片布局 - 强制每行两个 *&#x2F;   .team-grid {">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-08-06T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-08-31T06:15:43.474Z">
+<meta property="article:modified_time" content="2025-08-31T06:20:21.650Z">
 <meta property="article:author" content="zhizhizzzzzzz@gmail.com">
 <meta property="article:tag" content="欢迎">
 <meta property="article:tag" content="招新">
@@ -194,7 +194,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-08-31 14:15:43" itemprop="dateModified" datetime="2025-08-31T14:15:43+08:00">2025-08-31</time>
+                <time title="修改时间：2025-08-31 14:20:21" itemprop="dateModified" datetime="2025-08-31T14:20:21+08:00">2025-08-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -218,7 +218,23 @@
 
       
         <style>
-  /* 基础视频样式 - 保持原有比例 */
+  /* 比赛卡片布局 - 强制每行两个 */
+  .competition-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  
+  /* 组别卡片布局 - 强制每行两个 */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-bottom: 50px;
+  }
+
+  /* 视频布局 - 保持原有响应式设计 */
   .video-item {
     position: relative;
     width: 100%;
@@ -238,7 +254,7 @@
     border: none;
   }
 
-  /* PC端布局 - 第一行2个，其余3个 */
+  /* PC端视频布局 - 第一行2个，其余3个 */
   .video-gallery-first {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -253,27 +269,11 @@
     margin: 10px 0;
   }
 
-  /* 移动端布局 - 768px以下 */
+  /* 移动端视频布局 - 768px以下 */
   @media (max-width: 768px) {
     .video-gallery-first,
     .video-gallery-rest {
       grid-template-columns: repeat(2, 1fr);
-    }
-    
-    /* 比赛卡片布局 - 强制每行两个 */
-    .competition-cards {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-    }
-    .competition-cards a {
-      min-width: 100%;
-      max-width: 100%;
-    }
-    
-    /* 组别卡片布局 - 强制每行两个 */
-    .team-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 
@@ -282,16 +282,6 @@
     .video-gallery-first,
     .video-gallery-rest {
       gap: 8px;
-    }
-    
-    /* 比赛卡片 - 保持每行两个 */
-    .competition-cards {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    
-    /* 组别卡片 - 保持每行两个 */
-    .team-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 </style>
