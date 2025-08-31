@@ -28,7 +28,7 @@
 <meta property="og:description" content="&#x2F;* 全局样式设置 *&#x2F;   :root {     --primary-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);     --accent-color: #00f0ff;     --dark-bg: #121826;     --card-bg: #1e2538;     --text-primary: #f">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-08-06T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-08-31T09:26:40.194Z">
+<meta property="article:modified_time" content="2025-08-31T09:52:45.662Z">
 <meta property="article:author" content="zhizhizzzzzzz@gmail.com">
 <meta property="article:tag" content="欢迎">
 <meta property="article:tag" content="招新">
@@ -194,7 +194,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-08-31 17:26:40" itemprop="dateModified" datetime="2025-08-31T17:26:40+08:00">2025-08-31</time>
+                <time title="修改时间：2025-08-31 17:52:45" itemprop="dateModified" datetime="2025-08-31T17:52:45+08:00">2025-08-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1029,12 +1029,132 @@
   </div>
 </div>
     
-<div class="card-buttons">
-      <a href="/qa/" class="card-button">协会疑问？查看Q&A</a>
-</div>    
-<div class="card-buttons">
-      <a href="/competitions/" class="card-button">协会成果展示</a>
+<!-- 底部功能按钮区域（增强优化版） -->
+<div class="bottom-actions">
+  <a href="/qa/" class="action-button qa-button">
+    <span class="icon">❓</span>
+    <span class="text">协会疑问？查看Q&A</span>
+    <span class="glow-effect"></span>
+  </a>
+  
+  <a href="/competitions/" class="action-button achievements-button">
+    <span class="icon">🏆</span>
+    <span class="text">协会成果展示</span>
+    <span class="glow-effect"></span>
+  </a>
 </div>
+
+<style>
+  /* 底部按钮容器 - 修复手机端偏右问题 */
+  .bottom-actions {
+      display: flex;
+      justify-content: center; /* 确保整体容器内容居中 */
+      align-items: center;
+      gap: clamp(15px, 3vw, 25px); /* 间距自适应，小屏幕更小 */
+      margin: 50px auto 80px;
+      padding: 0 15px; /* 左右加内边距，避免按钮贴边 */
+      max-width: 800px;
+      width: 100%; /* 容器占满屏幕宽度，避免内容偏移 */
+      flex-wrap: wrap; /* 小屏幕自动换行 */
+      box-sizing: border-box; /* 关键：让padding不撑开宽度，避免超出屏幕 */
+  }
+
+  /* 基础按钮样式 - 优化手机端宽度 */
+  .action-button {
+      flex: 1 1 auto; /* 修复：弹性适配，小屏幕时自动占满可用宽度 */
+      min-width: 180px; /* 手机端最小宽度减小，避免超出屏幕 */
+      max-width: 300px; /* 限制最大宽度，避免平板/电脑端过宽 */
+      background: var(--card-bg);
+      color: var(--text-primary);
+      padding: 16px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center; /* 按钮内部内容居中 */
+      gap: 12px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0, 240, 255, 0.1);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box; /* 确保按钮padding不影响宽度计算 */
+  }
+
+  /* 按钮图标 */
+  .action-button .icon {
+      color: var(--accent-color);
+      font-size: 1.4rem;
+      transition: transform 0.3s ease;
+  }
+
+  /* 发光光效果 */
+  .action-button .glow-effect {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.15), transparent);
+      transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* 按钮hover效果 */
+  .action-button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 240, 255, 0.25);
+      border-color: rgba(0, 240, 255, 0.4);
+  }
+
+  .action-button:hover .glow-effect {
+      left: 100%;
+  }
+
+  .action-button:hover .icon {
+      transform: scale(1.15);
+  }
+
+  /* 针对不同按钮的微调 */
+  .qa-button:hover {
+      background: linear-gradient(135deg, rgba(30, 37, 56, 0.95), rgba(30, 37, 56, 1));
+  }
+
+  .achievements-button:hover {
+      background: linear-gradient(135deg, rgba(30, 37, 56, 0.95), rgba(30, 37, 56, 1));
+  }
+
+  /* 响应式调整 - 手机端优化 */
+  @media (max-width: 768px) {
+      .bottom-actions {
+          flex-direction: column; /* 屏幕变窄时，按钮垂直排列 */
+          margin: 40px auto 60px;
+          gap: 15px;
+          padding: 0 20px;
+      }
+      
+      .action-button {
+          min-width: 100%; /* 手机端按钮占满容器宽度（配合容器padding，不会贴边） */
+          max-width: none; /* 取消最大宽度限制，确保完全适配屏幕 */
+          padding: 14px 20px;
+          font-size: 0.95rem;
+      }
+  }
+
+  @media (max-width: 480px) {
+      .action-button {
+          padding: 12px 16px;
+          font-size: 0.9rem;
+          gap: 8px;
+      }
+      
+      .action-button .icon {
+          font-size: 1.2rem;
+      }
+  }
+</style>
+
     </div>
 
     
